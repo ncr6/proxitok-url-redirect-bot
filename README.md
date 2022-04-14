@@ -2,13 +2,12 @@
 A Telegram bot for converting TikTok URLs into ProxiTok ones. Powered by Telegraf.js
 
 ## 🤖 Commands
+
 > /rw 
-> /rw <TikTok URL>
 
 Rewrites TikTok URL(s) included in a message being sent or replied.
 
 > /download
-> /download <TikTok URL>
 
 Provides a direct download link to the shared video.
 
