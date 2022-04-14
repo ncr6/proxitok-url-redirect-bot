@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+    proxitok-url-redirect-bot:
+        image: tecncr/proxitok-url-redirect-bot:0.0.1
+        environment:
+            TELEGRAM_TOKEN: <your_token>
+            INSTANCE_URL: https://proxitok.herokuapp.com
+            BOT_LANGUAGE: en
+            AXIOS_USER_AGENT: "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0"
