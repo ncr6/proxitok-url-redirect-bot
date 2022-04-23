@@ -9,13 +9,8 @@ function DownloadURLBuilder() {
             const videoIDs = ShortenedURL.getShortenedVideoIDs(inputText);
             if (videoIDs.length > 0) {
                 proxitokUrl = `${instance_url}/@placeholder/video/${videoIDs[0]}`;
-                try {
-                    const response = await HTTPClient.getDownloadURL(proxitokUrl);
-                    reply = instance_url + response;
-                } catch (err) {
-                    console.error(err);
-                    reply = -1;
-                }
+                const response = await HTTPClient.getDownloadURL(proxitokUrl);
+                reply = response ? instance_url + response : -1;
             }
         }
         return reply;
