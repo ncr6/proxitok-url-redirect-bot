@@ -1,6 +1,6 @@
 {
   "name": "proxitok-url-redirect-bot",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Telegram bot for converting TikTok URLs into ProxiTok ones",
   "main": "src/index.js",
   "scripts": {
