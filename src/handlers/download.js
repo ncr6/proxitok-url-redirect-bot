@@ -1,11 +1,11 @@
 const { DownloadURLBuilder } = require('../builders');
-const { info_messages } = require('../locales');
+const { getInfoMessage } = require('../locales');
 
 module.exports = async (ctx) => {
     const reply = await DownloadURLBuilder.getDownloadURL(ctx.message.reply_to_message?.text);
     if (reply) {
-        ctx.reply(reply === -1 ? info_messages.download_url_request_error : reply);
+        ctx.reply(reply === -1 ? getInfoMessage(ctx,'download_url_request_error') : reply);
     } else {
-        ctx.reply(info_messages.videoid_not_found);
+        ctx.reply(getInfoMessage(ctx, 'videourl_not_found'));
     }
 }

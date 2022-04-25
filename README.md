@@ -23,7 +23,6 @@ services:
         environment:
             TELEGRAM_TOKEN: <your_token>
             INSTANCE_URL: https://proxitok.herokuapp.com
-            BOT_LANGUAGE: en
             AXIOS_USER_AGENT: "Mozilla/5.0 (X11; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0"
 ```
 After setting the environment variables, run ``docker-compose up -d``

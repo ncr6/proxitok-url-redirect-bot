@@ -1,12 +1,10 @@
-const { language } = require('../config');
+module.exports = {
+    getInfoMessage: (ctx, message) => {
+        userLang = ctx.update.message.from.language_code;
+        supportedLocales = ['en', 'es'];
 
-const supportedLangs = ["es", "en"];
-
-if (!supportedLangs.includes(language)) {
-    console.error(`Language ${language} is not supported. Falling back to English.`);
-    language = "en";
-}
-
-module.exports = { 
-    info_messages: require(`./${language}`),
-}
+        if (supportedLocales.includes(userLang)) {
+            return require(`../locales/${userLang}`)[message];
+        }
+    }
+};
