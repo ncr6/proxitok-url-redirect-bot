@@ -1,8 +1,8 @@
 docker_builder:
   only_if: $CIRRUS_TAG != ''
   env:
-    DOCKER_USERNAME: ENCRYPTED[!e6736e5c555a2ce532894dc048b8057e9cfed4edc11e24f078fea26d54c425662914daeb526aaa80bfa399889d258104!]
-    DOCKER_PASSWORD: ENCRYPTED[3865cbc52992e50644f1f471ff3d0d9e3ab60a7a90f204ccb6032a2f6a85e91f1c69a13424b3231b05b5f62bd36a52c1]
+    DOCKER_USERNAME: ENCRYPTED[d1526f9e9ba2df9fb708e4597998ca5774607eab506fcbd86d78b48d0cb9d7cc8f582b2a6ad3045bf757ace6d41b13d0]
+    DOCKER_PASSWORD: ENCRYPTED[460d7bf3f284666cf66ba6b13b400b1e631abad36d633c774236716eed05c38046816589de3f12e961cea8eeb9f0c836]
   setup_script:
     - docker buildx create --name multibuilder
     - docker buildx use multibuilder
