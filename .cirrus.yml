@@ -7,6 +7,6 @@ docker_builder:
     - docker buildx create --name multibuilder
     - docker buildx use multibuilder
     - docker buildx inspect --bootstrap
-  build_script: docker buildx build --platform linux/amd64,linux/arm64 --tag myrepo/foo:$CIRRUS_TAG .
+  build_script: docker buildx build --platform linux/amd64,linux/arm64 --tag tecncr/proxitok-url-redirect-bot:$CIRRUS_TAG .
   login_script: docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-  push_script: docker push myrepo/foo:$CIRRUS_TAG
+  push_script: docker push tecncr/proxitok-url-redirect-bot:$CIRRUS_TAG
