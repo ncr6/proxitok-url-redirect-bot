@@ -1,0 +1,12 @@
+docker_builder:
+  only_if: $CIRRUS_TAG != ''
+  env:
+    DOCKER_USERNAME: ENCRYPTED[!e6736e5c555a2ce532894dc048b8057e9cfed4edc11e24f078fea26d54c425662914daeb526aaa80bfa399889d258104!]
+    DOCKER_PASSWORD: ENCRYPTED[3865cbc52992e50644f1f471ff3d0d9e3ab60a7a90f204ccb6032a2f6a85e91f1c69a13424b3231b05b5f62bd36a52c1]
+  setup_script:
+    - docker buildx create --name multibuilder
+    - docker buildx use multibuilder
+    - docker buildx inspect --bootstrap
+  build_script: docker buildx build --platform linux/amd64,linux/arm64 --tag myrepo/foo:$CIRRUS_TAG .
+  login_script: docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+  push_script: docker push myrepo/foo:$CIRRUS_TAG
