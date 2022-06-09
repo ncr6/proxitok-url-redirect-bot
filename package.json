@@ -23,6 +23,6 @@
   "homepage": "https://github.com/ncr6/proxitok-url-redirect-bot#readme",
   "dependencies": {
     "node-html-parser": "^5.3.3",
-    "telegraf": "^4.8.3"
+    "telegraf": "^4.8.5"
   }
 }
